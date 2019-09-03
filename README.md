@@ -18,13 +18,9 @@ To run the project locally:
 
 To run on a server, you need to build the project and deploy it:
 
-```
-    npx next build
-```
+`npx next build`
 
 Once you have the `build`, you can start the server with:
 
-```
-    npx next start
-```
+`npx next start`
 
