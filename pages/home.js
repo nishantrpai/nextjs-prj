@@ -1,7 +1,14 @@
-function Home() {
+import { useAmp } from 'next/amp'
+
+export const config = {
+  amp: 'hybrid'
+}
+
+export default () => {
+  const isAmp = useAmp()
   return (
     <div>
-      <p>Home Page</p>
+      <p>{isAmp ? 'Not AMP Home Page' : 'Home Page'}</p>
       <style jsx>{
         `
         p {
@@ -27,4 +34,3 @@ function Home() {
   )
 }
 
-export default Home

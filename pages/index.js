@@ -1,11 +1,17 @@
 import Nav from '../components/nav'
+import { useAmp } from 'next/amp'
 
-function Home() {
+export const config = {
+  amp: true
+}
+
+export default () => {  
+  const isAmp = useAmp()
   return (
     <div>
       <Nav/>
       <p>Welcome to Next.js</p>
-      <a href='/home'>home page</a>
+      <a href={isAmp ? '/home?amp=1' : '/home'}>home page</a>
       <style jsx>{
         `
           p {
@@ -31,5 +37,3 @@ function Home() {
     </div>
   )
 }
-
-export default Home
